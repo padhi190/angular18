@@ -1,0 +1,12 @@
+<br>
+<br>
+<a routerLink="/login">Have an account?</a>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <input type="text" name="username" placeholder="Username" formControlName="username" />
+    <input type="text" name="email" placeholder="Email" formControlName="email" />
+    <input type="password" name="age" placeholder="Age" formControlName="password" />
+    <button type="submit" [disabled]="registerForm.invalid">submit</button>
+</form>
+{{ registerForm.value | json }}
+{{ registerForm.valid}}
+{{ registerForm.errors | json }}
